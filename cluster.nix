@@ -5,6 +5,7 @@
 
   adminKeys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDwjDM2gTgro+aN81I65BFexfLXq1u/8AJ3PmCTX5X/a i@anish.land"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIABmf+NCxBMyuZukhxuE4fQIAJNf7WQI9ieKq2gUaXba git.cmu.dev from zenbook"
   ];
 
   hosts = {
