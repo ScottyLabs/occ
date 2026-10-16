@@ -12,6 +12,7 @@ in
     let
       hostName = config.networking.hostName;
       ceph = cluster.ceph;
+      osds = cluster.hosts.${hostName}.osds or [ ];
     in
     {
       # incus boots vms from rbd images
@@ -46,6 +47,10 @@ in
         mgr = {
           enable = lib.elem hostName ceph.mgrs;
           daemons = [ hostName ];
+        };
+        osd = {
+          enable = osds != [ ];
+          daemons = osds;
         };
       };
 
