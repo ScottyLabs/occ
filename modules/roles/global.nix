@@ -6,6 +6,7 @@
       config.flake.modules.nixos.base
       config.flake.modules.nixos.ceph
       config.flake.modules.nixos.incus
+      config.flake.modules.nixos.sops
 
       inputs.srvos.nixosModules.server
       inputs.srvos.nixosModules.mixins-systemd-boot
