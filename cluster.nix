@@ -8,7 +8,7 @@
   hosts = {
     mimosa = {
       system = "aarch64-linux";
-      address = "172.24.97.221";
+      address = "128.2.96.10";
     };
   };
 }
