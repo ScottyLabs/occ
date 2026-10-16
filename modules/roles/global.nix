@@ -4,6 +4,7 @@
   flake.modules.nixos.global = {
     imports = [
       config.flake.modules.nixos.base
+      config.flake.modules.nixos.ceph
       config.flake.modules.nixos.incus
       inputs.srvos.nixosModules.server
       inputs.srvos.nixosModules.mixins-systemd-boot
