@@ -6,3 +6,4 @@
 | 2 | [Use Incus to run instances](0002-use-incus-to-run-instances.md) | accepted |
 | 3 | [Store instance disks in Ceph](0003-store-instance-disks-in-ceph.md) | accepted |
 | 4 | [Create OSDs in ceph-volume's lvm mode](0004-create-osds-in-ceph-volume-lvm-mode.md) | accepted |
+| 5 | [Use sdd as the OSD on mimosa](0005-use-sdd-as-the-osd-on-mimosa.md) | accepted |
