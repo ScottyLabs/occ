@@ -39,6 +39,9 @@ in
           "ms mon service mode" = "secure";
           "ms mon client mode" = "secure";
           "rbd default map options" = "ms_mode=secure";
+          "mon allow pool size one" = "true";
+          "osd pool default size" = "1";
+          "osd pool default min size" = "1";
         };
         mon = {
           enable = lib.elem hostName ceph.mons;
@@ -51,6 +54,8 @@ in
         osd = {
           enable = osds != [ ];
           daemons = osds;
+          # drop the module's size 3 and fixed pg count defaults
+          extraConfig = { };
         };
       };
 
