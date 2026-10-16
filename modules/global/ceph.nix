@@ -68,12 +68,45 @@ in
         in
         "ip saddr { ${peers} } tcp dport { 3300, 6800-7300 } accept";
 
+      sops.secrets =
+        let
+          sopsFile = ../../secrets/ceph.yaml;
+        in
+        {
+          ceph-admin-keyring = {
+            inherit sopsFile;
+            key = "admin-keyring";
+            path = "/etc/ceph/ceph.client.admin.keyring";
+          };
+          ceph-incus-keyring = {
+            inherit sopsFile;
+            key = "incus-keyring";
+            path = "/etc/ceph/ceph.client.incus.keyring";
+          };
+        }
+        // lib.optionalAttrs (lib.elem hostName ceph.mons) {
+          ceph-mon-keyring = {
+            inherit sopsFile;
+            key = "mon-keyring";
+          };
+        }
+        // lib.optionalAttrs (osds != [ ]) {
+          ceph-bootstrap-osd-keyring = {
+            inherit sopsFile;
+            key = "bootstrap-osd-keyring";
+            path = "/var/lib/ceph/bootstrap-osd/ceph.keyring";
+          };
+        };
+
       virtualisation.incus.preseed = {
         storage_pools = [
           {
             name = "ceph";
             driver = "ceph";
-            config."ceph.osd.pool_name" = "incus";
+            config = {
+              "ceph.osd.pool_name" = "incus";
+              "ceph.user.name" = "incus";
+            };
           }
         ];
         profiles = [
