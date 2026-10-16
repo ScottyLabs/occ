@@ -1,16 +1,18 @@
 # Set up a host's TPM identity
 
-1. On the host, as root, generate the identity and print its recipient:
+1. On the host, as root, generate the identity:
 
     ```sh
     install -d -m 700 /var/lib/sops-nix
-    nix shell nixpkgs#age-plugin-tpm -c sh -c '
-      age-plugin-tpm --generate -o /var/lib/sops-nix/key.txt
-      age-plugin-tpm -y /var/lib/sops-nix/key.txt
-    '
+    nix shell nixpkgs#age-plugin-tpm -c age-plugin-tpm --generate -o /var/lib/sops-nix/key.txt
     ```
 
-2. Add the recipient to `keys` in `.sops.yaml` and to every creation rule the host should be able to read.
+2. From the repo, save the host's recipient:
+
+    ```sh
+    mkdir -p keys/hosts/<host>
+    ssh root@<host>.lan.cmu.edu 'nix shell nixpkgs#age-plugin-tpm -c age-plugin-tpm -y /var/lib/sops-nix/key.txt' > keys/hosts/<host>/age.pub
+    ```
 
 3. In the devshell, re-encrypt each existing secrets file to the new recipient list:
 
@@ -18,4 +20,4 @@
     sops updatekeys secrets/<file>.yaml
     ```
 
-4. Deploy the host.
+4. Commit and deploy the host.

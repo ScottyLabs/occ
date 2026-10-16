@@ -10,3 +10,4 @@
 | 6 | [Keep one replica until three hosts have OSDs](0006-keep-one-replica-until-three-hosts.md) | accepted |
 | 7 | [Manage secrets with sops-nix](0007-manage-secrets-with-sops-nix.md) | accepted |
 | 8 | [Decrypt secrets with a TPM-sealed identity](0008-decrypt-secrets-with-a-tpm-sealed-identity.md) | accepted |
+| 9 | [Use post-quantum age keys for admins](0009-use-post-quantum-age-keys-for-admins.md) | accepted |
