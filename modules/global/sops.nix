@@ -10,6 +10,7 @@
           sshKeyPaths = [ ];
         };
         gnupg.sshKeyPaths = [ ];
+        useSystemdActivation = true;
       };
     };
 }
