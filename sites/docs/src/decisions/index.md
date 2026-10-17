@@ -13,3 +13,4 @@
 | 9 | [Use post-quantum age keys for admins](0009-use-post-quantum-age-keys-for-admins.md) | accepted |
 | 10 | [Only admins create and edit instances](0010-only-admins-create-and-edit-instances.md) | accepted |
 | 11 | [Give every instance a bridged IPv4 NIC and a routed IPv6 NIC](0011-give-every-instance-a-bridged-ipv4-nic-and-a-routed-ipv6-nic.md) | accepted |
+| 12 | [Only current CMU members use OCC](0012-only-current-cmu-members-use-occ.md) | accepted |
