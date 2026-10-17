@@ -6,6 +6,10 @@
       config.flake.modules.nixos.base
       config.flake.modules.nixos.ceph
       config.flake.modules.nixos.incus
+      config.flake.modules.nixos.bridge
+      config.flake.modules.nixos.ipv6-tunnel
+      config.flake.modules.nixos.ipv6-wireguard
+      config.flake.modules.nixos.instance-ipv6
       config.flake.modules.nixos.sops
 
       inputs.srvos.nixosModules.server
