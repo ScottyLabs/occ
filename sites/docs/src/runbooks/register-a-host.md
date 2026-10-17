@@ -3,15 +3,15 @@
 ## Register the host
 
 1. On the host, find the wired interface's MAC address with `ip link show <interface>`.
-2. Go to [getonline.cmu.edu](https://getonline.cmu.edu) and open "Manage your Network Registrations".
-3. Click "register new devices", which opens "Connect to the Wired Network".
-4. Fill in the form and submit it:
-    - Building: University Center
-    - Hostname: the host's name
-    - Hardware address: the MAC from step 1
-    - Ownership: "This is a departmental device, and should not be associated with my account"
-    - Group: scottylabs
-5. The host now shows up under "Manage your Network Registrations". DHCP gives it a private address, and its name is `<host>.lan.local.cmu.edu`.
+1. Go to [getonline.cmu.edu](https://getonline.cmu.edu) and open "Manage your Network Registrations".
+1. Click "register new devices", which opens "Connect to the Wired Network".
+1. Fill in the form and submit it:
+   - Building: University Center
+   - Hostname: the host's name
+   - Hardware address: the MAC from step 1
+   - Ownership: "This is a departmental device, and should not be associated with my account"
+   - Group: scottylabs
+1. The host now shows up under "Manage your Network Registrations". DHCP gives it a private address, and its name is `<host>.lan.local.cmu.edu`.
 
 ## Request a public IP
 

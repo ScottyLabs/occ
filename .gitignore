@@ -1,1 +1,16 @@
-/docs/site/
+# Nix / devenv
+.devenv/
+.pre-commit-config.yaml
+
+# AI
+.mcp.json
+.claude
+
+# Secrets
+.env
+
+# Generated artifacts
+/sites/docs/site/
+
+# OS
+.DS_Store

@@ -1,8 +1,9 @@
 [project]
 site_name = "Open Compute Cluster"
+site_url = "https://docs.occ.build"
 repo_url = "https://git.cmu.dev/ScottyLabs/occ"
 docs_dir = "src"
-edit_uri = "_edit/main/docs/src/"
+edit_uri = "_edit/main/sites/docs/src/"
 
 [project.theme]
 features = ["content.action.edit"]

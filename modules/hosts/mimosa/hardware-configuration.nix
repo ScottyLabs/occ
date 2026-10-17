@@ -5,16 +5,18 @@
     {
       imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-      boot.initrd.availableKernelModules = [
-        "xhci_pci_renesas"
-        "mpt3sas"
-        "nvme"
-        "usb_storage"
-        "usbhid"
-      ];
-      boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ ];
-      boot.extraModulePackages = [ ];
+      boot = {
+        initrd.availableKernelModules = [
+          "xhci_pci_renesas"
+          "mpt3sas"
+          "nvme"
+          "usb_storage"
+          "usbhid"
+        ];
+        initrd.kernelModules = [ ];
+        kernelModules = [ ];
+        extraModulePackages = [ ];
+      };
 
       fileSystems."/" = {
         device = "/dev/disk/by-uuid/5522a903-22a2-408e-8a3e-8639f59540cd";

@@ -10,6 +10,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    scottylabs.url = "git+https://git.cmu.dev/ScottyLabs/kennel";
+    scottylabs.inputs.nixpkgs.follows = "nixpkgs";
+
     # Flake infrastructure
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
@@ -27,5 +30,14 @@
         "aarch64-linux"
         "x86_64-linux"
       ];
+
+      perSystem =
+        { pkgs, ... }:
+        {
+          packages.docs = (inputs.scottylabs.mkLib pkgs).buildZensical {
+            src = ./sites/docs;
+            name = "occ-docs";
+          };
+        };
     };
 }
