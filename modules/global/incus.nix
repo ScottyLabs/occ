@@ -11,8 +11,25 @@ in
       virtualisation.incus = {
         enable = true;
         ui.enable = true;
-        preseed.config."core.https_address" = "${host.address}:8443";
+        preseed.config = {
+          "core.https_address" = "${host.address}:8443";
+          "acme.domain" = "incus.occ.build";
+          "acme.email" = "admin@scottylabs.org";
+          "acme.agree_tos" = "true";
+          "acme.challenge" = "DNS-01";
+          "acme.provider" = "cloudflare";
+        };
       };
+
+      sops = {
+        secrets.cloudflare-token.sopsFile = ../../secrets/acme.yaml;
+        templates."incus-acme.env" = {
+          content = "CF_DNS_API_TOKEN=${config.sops.placeholder.cloudflare-token}\n";
+          restartUnits = [ "incus.service" ];
+        };
+      };
+      # incus runs lego with its own environment, so the token stays out of the preseed and incus's config
+      systemd.services.incus.serviceConfig.EnvironmentFile = config.sops.templates."incus-acme.env".path;
 
       # incus requires the nftables backend
       networking.nftables.enable = true;
