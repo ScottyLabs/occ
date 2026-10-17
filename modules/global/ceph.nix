@@ -11,7 +11,7 @@ in
     }:
     let
       hostName = config.networking.hostName;
-      ceph = cluster.ceph;
+      inherit (cluster) ceph;
       osds = cluster.hosts.${hostName}.osds or [ ];
     in
     {
@@ -25,7 +25,7 @@ in
         # incusd needs the ceph CLI on its PATH
         client.enable = true;
         global = {
-          fsid = ceph.fsid;
+          inherit (ceph) fsid;
           monInitialMembers = lib.concatStringsSep "," ceph.mons;
           monHost = lib.concatMapStringsSep "," (n: "[v2:${cluster.hosts.${n}.address}:3300]") ceph.mons;
         };

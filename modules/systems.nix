@@ -12,7 +12,7 @@ in
   flake.nixosConfigurations = lib.mapAttrs (
     hostname: host:
     inputs.nixpkgs.lib.nixosSystem {
-      system = host.system;
+      inherit (host) system;
       specialArgs = { inherit inputs; };
       modules = [
         nixos.${hostname}
