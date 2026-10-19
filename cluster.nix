@@ -23,6 +23,11 @@
       mac = "18:c0:4d:8d:97:a3";
       ipv6Prefix = "2001:470:e2be:1::/64";
       osds = [ "0" ];
+      nix.settings = {
+        max-jobs = 4;
+        cores = 4;
+      };
+      buildMemoryMax = "8G";
     };
   };
 }
