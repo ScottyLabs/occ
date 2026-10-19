@@ -2,7 +2,8 @@
   description = "Open Compute Cluster";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # TODO: https://github.com/NixOS/nixpkgs/pull/575139
+    nixpkgs.url = "github:ap-1/nixpkgs/openfga-26.05";
 
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "nixpkgs";

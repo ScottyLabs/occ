@@ -12,6 +12,7 @@
       config.flake.modules.nixos.ipv6-wireguard
       config.flake.modules.nixos.instance-ipv6
       config.flake.modules.nixos.sops
+      config.flake.modules.nixos.openfga
 
       inputs.srvos.nixosModules.server
       inputs.srvos.nixosModules.mixins-systemd-boot
