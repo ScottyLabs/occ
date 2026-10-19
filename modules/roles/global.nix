@@ -4,6 +4,7 @@
   flake.modules.nixos.global = {
     imports = [
       config.flake.modules.nixos.base
+      config.flake.modules.nixos.nixbuild
       config.flake.modules.nixos.ceph
       config.flake.modules.nixos.incus
       config.flake.modules.nixos.bridge
