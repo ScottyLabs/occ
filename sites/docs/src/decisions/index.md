@@ -15,3 +15,4 @@
 | 11 | [Give every instance a bridged IPv4 NIC and a routed IPv6 NIC](0011-give-every-instance-a-bridged-ipv4-nic-and-a-routed-ipv6-nic.md) | accepted |
 | 12 | [Only current CMU members use OCC](0012-only-current-cmu-members-use-occ.md) | accepted |
 | 13 | [Get Incus's certificate through Cloudflare DNS](0013-get-the-incus-certificate-through-cloudflare-dns.md) | accepted |
+| 14 | [Authorize Incus requests with OpenFGA](0014-authorize-incus-requests-with-openfga.md) | accepted |

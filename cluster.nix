@@ -5,6 +5,8 @@
     mgrs = [ "mimosa" ];
   };
 
+  openfga.storeId = "01M59HFWMF2ZPV44KBJSYSDJQF";
+
   ipv6 = {
     prefix = "2001:470:e2be::/48";
     # hurricane electric 6in4 tunnel

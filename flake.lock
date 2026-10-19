@@ -590,16 +590,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1787204541,
-        "narHash": "sha256-OURZPknrTjQrlNyxPdqzyqmU/81Wes1CUP/Ft1Rv/YI=",
-        "owner": "NixOS",
+        "lastModified": 1792395220,
+        "narHash": "sha256-fCOrSCvL44fgSAiB8g2Y9vOslNvVSep8nFJfN0CJSS4=",
+        "owner": "ap-1",
         "repo": "nixpkgs",
-        "rev": "5880666fd9eb563038431edb35c2d0aa595884e6",
+        "rev": "c7a72c1e50e6cdecc6eeacffb81c8b8341199965",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-26.05",
+        "owner": "ap-1",
+        "ref": "openfga-26.05",
         "repo": "nixpkgs",
         "type": "github"
       }
