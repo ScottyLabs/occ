@@ -16,3 +16,4 @@
 | 12 | [Only current CMU members use OCC](0012-only-current-cmu-members-use-occ.md) | accepted |
 | 13 | [Get Incus's certificate through Cloudflare DNS](0013-get-the-incus-certificate-through-cloudflare-dns.md) | accepted |
 | 14 | [Authorize Incus requests with OpenFGA](0014-authorize-incus-requests-with-openfga.md) | accepted |
+| 15 | [Authenticate to Incus with CMU's identity provider](0015-authenticate-to-incus-with-cmus-identity-provider.md) | accepted |

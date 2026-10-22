@@ -6,6 +6,7 @@
 | Instance | A container or VM that Incus runs on a host. |
 | Tenant | A person or team that runs instances on the cluster. An instance's owner is the tenant it was created for. |
 | Admin | Someone whose SSH and age keys are in `keys/admins`, which lets them deploy hosts and decrypt secrets. |
+| OIDC user | Someone who logs in to Incus with their Andrew ID. |
 | Cluster | All of our hosts, which together run one Incus cluster and one Ceph cluster. |
 | Tunnel host | The host that Hurricane Electric's IPv6 tunnel ends on, which forwards IPv6 to and from the other hosts. |
 | OSD | A Ceph daemon that stores data on one disk. |
