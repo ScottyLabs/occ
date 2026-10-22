@@ -17,3 +17,4 @@
 | 13 | [Get Incus's certificate through Cloudflare DNS](0013-get-the-incus-certificate-through-cloudflare-dns.md) | accepted |
 | 14 | [Authorize Incus requests with OpenFGA](0014-authorize-incus-requests-with-openfga.md) | accepted |
 | 15 | [Authenticate to Incus with CMU's identity provider](0015-authenticate-to-incus-with-cmus-identity-provider.md) | accepted |
+| 16 | [Give each tenant their own Incus project](0016-give-each-tenant-their-own-incus-project.md) | accepted |
