@@ -6,6 +6,7 @@ in
     { config, lib, ... }:
     let
       host = cluster.hosts.${config.networking.hostName};
+      oidcClientId = "855326ff-eddb-4634-98af-2e9e12636b08";
     in
     {
       virtualisation.incus = {
@@ -19,6 +20,13 @@ in
           "acme.agree_tos" = "true";
           "acme.challenge" = "DNS-01";
           "acme.provider" = "cloudflare";
+          "oidc.issuer" = "https://login.microsoftonline.com/e36ee38f-91b8-4dca-9b13-caa5360c9714/v2.0";
+          "oidc.client.id" = oidcClientId;
+          "oidc.scopes" = "openid,offline_access,email,api://${oidcClientId}/access";
+          # entra's v2 access tokens have the client id as their audience
+          "oidc.audience" = oidcClientId;
+          # andrewid@andrew.cmu.edu
+          "oidc.claim" = "preferred_username";
         };
       };
 
