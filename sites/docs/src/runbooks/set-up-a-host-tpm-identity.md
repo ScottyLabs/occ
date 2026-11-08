@@ -14,7 +14,7 @@
    ssh root@<host>.lan.cmu.edu 'nix shell nixpkgs#age-plugin-tpm -c age-plugin-tpm -y /var/lib/sops-nix/key.txt' > keys/hosts/<host>/age.pub
    ```
 
-1. In the devenv shell, re-encrypt each existing secrets file to the new recipient list:
+1. In the dev shell (`nix develop`), re-encrypt each existing secrets file to the new recipient list:
 
    ```sh
    sops updatekeys secrets/<file>.yaml
