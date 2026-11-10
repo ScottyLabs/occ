@@ -1,7 +1,7 @@
 # Terminology
 
 | Term | Meaning |
-|---|---|
+| -- | -- |
 | Host | One of our physical machines, which runs Incus and Ceph. getonline calls any registered device a host, but these docs only use the word for our machines. |
 | Instance | A container or VM that Incus runs on a host. |
 | Tenant | A person or team that runs instances on the cluster. An instance's owner is the tenant it was created for. |
