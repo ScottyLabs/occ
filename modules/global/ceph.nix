@@ -120,5 +120,25 @@ in
           }
         ];
       };
+
+      # Forces incus to start after host ceph daemons and stop before them.
+      # This lets the disks actually init properly on start, and flush properly on shutdown
+      systemd.services.incus =
+        let
+          daemons =
+            map (d: "ceph-mon-${d}.service") (
+              lib.optionals config.services.ceph.mon.enable config.services.ceph.mon.daemons
+            )
+            ++ map (d: "ceph-mgr-${d}.service") (
+              lib.optionals config.services.ceph.mgr.enable config.services.ceph.mgr.daemons
+            )
+            ++ map (d: "ceph-osd-${d}.service") (
+              lib.optionals config.services.ceph.osd.enable config.services.ceph.osd.daemons
+            );
+        in
+        {
+          wants = daemons;
+          after = daemons;
+        };
     };
 }
