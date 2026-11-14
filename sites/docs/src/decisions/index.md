@@ -18,3 +18,4 @@
 | 14 | [Authorize Incus requests with OpenFGA](0014-authorize-incus-requests-with-openfga.md) | accepted |
 | 15 | [Authenticate to Incus with CMU's identity provider](0015-authenticate-to-incus-with-cmus-identity-provider.md) | accepted |
 | 16 | [Give each tenant their own Incus project](0016-give-each-tenant-their-own-incus-project.md) | accepted |
+| 17 | [Patch KVM so guests can reach vCPUs past 15](0017-patch-kvm-so-guests-can-reach-vcpus-past-15.md) | accepted |

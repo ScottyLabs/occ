@@ -7,6 +7,7 @@
       config.flake.modules.nixos.nixbuild
       config.flake.modules.nixos.ceph
       config.flake.modules.nixos.incus
+      config.flake.modules.nixos.kvm
       config.flake.modules.nixos.bridge
       config.flake.modules.nixos.ipv6-tunnel
       config.flake.modules.nixos.ipv6-wireguard
