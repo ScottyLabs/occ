@@ -11,6 +11,8 @@ Every instance's root disk is an RBD image in the Ceph pool `incus` ([ADR 3](../
 
 The hosts listed in `ceph.mons` and `ceph.mgrs` in `cluster.nix` run Ceph's monitors and managers, and each host's `osds` lists the OSDs it runs. Each OSD is a whole disk prepared with ceph-volume in `lvm` mode, as described in [Add an OSD](../runbooks/add-an-osd.md).
 
+Incus starts after the Ceph daemons on its host and stops before them. The host's kernel maps each instance's disk as an RBD device. This ensures the Ceph pool is available on boot, and that it fully flushes after shutdown.
+
 The number of copies that each pool keeps of an object is set by [ADR 6](../decisions/0006-keep-one-replica-until-three-hosts.md).
 
 Ceph's daemons only accept msgr2 connections in `secure` mode, which encrypts all Ceph traffic, including the disk traffic between instances and OSDs. Each host's firewall only accepts Ceph's ports from cluster hosts.
