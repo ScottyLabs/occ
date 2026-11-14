@@ -1,0 +1,40 @@
+KVM: arm64: vgic-v3: Honour the SGI range selector
+
+ICC_SGI1R_EL1.RS selects which 16 Aff0 values the target list covers
+(RS * 16 + n). KVM ignored it, so guests that number their CPUs flat
+(Aff0 0-31 in one cluster, as macOS VMAPPLE kernels do) could not send IPIs
+to CPUs 16 and up. Use it, and advertise GICD_TYPER.RSS.
+
+--- a/arch/arm64/kvm/vgic/vgic-mmio-v3.c
++++ b/arch/arm64/kvm/vgic/vgic-mmio-v3.c
+@@ -101,6 +101,8 @@
+ 		} else {
+ 			value |= (INTERRUPT_ID_BITS_SPIS - 1) << 19;
+ 		}
++		/* SGIs reach Aff0 16-255 through ICC_SGI1R's range selector */
++		value |= GICD_TYPER_RSS;
+ 		break;
+ 	case GICD_TYPER2:
+ 		if (vgic_supports_direct_sgis(vcpu->kvm))
+@@ -1091,7 +1093,8 @@
+  * With GICv3 (and ARE=1) CPUs trigger SGIs by writing to a system register.
+  * This will trap in sys_regs.c and call this function.
+  * This ICC_SGI1R_EL1 register contains the upper three affinity levels of the
+- * target processors as well as a bitmask of 16 Aff0 CPUs.
++ * target processors as well as a bitmask of 16 Aff0 CPUs, offset by 16 times
++ * the range selector (RS).
+  *
+  * If the interrupt routing mode bit is not set, we iterate over the Aff0
+  * bits and signal the VCPUs matching the provided Aff{3,2,1}.
+@@ -1127,9 +1130,10 @@
+ 	mpidr |= SGI_AFFINITY_LEVEL(reg, 2);
+ 	mpidr |= SGI_AFFINITY_LEVEL(reg, 1);
+ 	target_cpus = FIELD_GET(ICC_SGI1R_TARGET_LIST_MASK, reg);
++	mpidr |= FIELD_GET(ICC_SGI1R_RS_MASK, reg) * 16;
+ 
+ 	for_each_set_bit(aff0, &target_cpus, hweight_long(ICC_SGI1R_TARGET_LIST_MASK)) {
+-		c_vcpu = kvm_mpidr_to_vcpu(kvm, mpidr | aff0);
++		c_vcpu = kvm_mpidr_to_vcpu(kvm, mpidr + aff0);
+ 		if (c_vcpu)
+ 			vgic_v3_queue_sgi(c_vcpu, sgi, allow_group1);
+ 	}
