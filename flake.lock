@@ -19,11 +19,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794276619,
-        "narHash": "sha256-prgkIMWT8szJ3wdynxV8XPCbvZgMctFlYZ6qKyrV8/c=",
+        "lastModified": 1794378719,
+        "narHash": "sha256-duSnTEcx0t1Sba5nhaR+8RnHlOTX76cvnMYkcQm6AV4=",
         "ref": "refs/heads/main",
-        "rev": "0d7f08f7d59c40e5eb5356a2506f894afefb2eee",
-        "revCount": 54,
+        "rev": "1388af1ec59f20d7daade19cb42b80fccdb2bc60",
+        "revCount": 63,
         "type": "git",
         "url": "https://git.cmu.dev/ScottyLabs/collar"
       },
@@ -313,11 +313,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794127728,
-        "narHash": "sha256-QhZ104DwHvvMxWxmI13zdppISE27UmdqhRI2VwBg/yU=",
+        "lastModified": 1794561628,
+        "narHash": "sha256-oWtItM1eQqkp9OJXq2/Zo10Y9Vu9PDE6O8JRjj4+EkE=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "51c6dc40d18552701f7c5c62e3f7a5fc899f7132",
+        "rev": "84edd48f141b0c8910dffdd0296ddd577e829132",
         "type": "github"
       },
       "original": {
@@ -344,11 +344,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1794375980,
-        "narHash": "sha256-tWQCOXl7I+kusXTFzXlXfrzZS/IuoU2k1Dp/lVGfG7U=",
+        "lastModified": 1794694978,
+        "narHash": "sha256-Lrq74M/WY7bcWS5IpnpZfMDhL2IaDBx5OYoFSiypc0M=",
         "ref": "refs/heads/main",
-        "rev": "d413a91dface3615853bef82a3bf63a82afb3b77",
-        "revCount": 450,
+        "rev": "fca06604406d5b1d1619e75962eccb2ee60dea21",
+        "revCount": 463,
         "type": "git",
         "url": "https://git.cmu.dev/ScottyLabs/kennel"
       },
@@ -364,11 +364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794261845,
-        "narHash": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
+        "lastModified": 1794624949,
+        "narHash": "sha256-3q/hxp/flW1PnV3Dx+H3p8kHGEHJ7251BqVMNsAAB9E=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
+        "rev": "11e5885d241743ff0193465d533b20e754bc3ce0",
         "type": "github"
       },
       "original": {
@@ -384,11 +384,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794192167,
-        "narHash": "sha256-JKGtBDlM5DkOPnturQ14To+qeQhcjS3rA2hcakmWI0k=",
+        "lastModified": 1794450534,
+        "narHash": "sha256-yZWo9Sr95fIHYZgmSciQHQ980a1foGc2ZfwEENfs2zI=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "11e24334759f21e15f16895fc4c9645d97ec5acc",
+        "rev": "7d6dccf535dc2fdfef9a462f954e5fbd6a587920",
         "type": "github"
       },
       "original": {
